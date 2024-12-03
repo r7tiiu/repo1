@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Vé Tour Du Lịch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #f1c40f;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #111;
+            color: #f1c40f;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #222;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-size: 16px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            background-color: #333;
+            color: #f1c40f;
+            border: 1px solid #f1c40f;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #f1c40f;
+            color: #111;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input[type="submit"]:hover {
+            background-color: #e67e22;
+        }
+        .footer {
+            background-color: #111;
+            color: #f1c40f;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .total-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #e67e22;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .voucher-info {
+            color: #e67e22;
+            font-size: 16px;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        // Hàm để tính tổng giá vé
+        function calculateTotalPrice() {
+            var adultPrice = 15000000; // Giá vé người lớn
+            var childPrice = 10000000; // Giá vé trẻ em
+
+            // Lấy số lượng vé người lớn và trẻ em từ các trường nhập liệu
+            var adultQuantity = document.getElementById("adult_quantity").value;
+            var childQuantity = document.getElementById("child_quantity").value;
+
+            // Tính tổng giá tiền
+            var totalPrice = (adultPrice * adultQuantity) + (childPrice * childQuantity);
+
+            // Kiểm tra voucher và giảm giá 20% nếu voucher đúng
+            var voucherCode = document.getElementById("voucher").value;
+            if (voucherCode === "10c8") {
+                totalPrice *= 0.8; // Giảm 20%
+            }
+
+            // Hiển thị tổng giá tiền
+            document.getElementById("total_price").textContent = "Tổng giá tiền: " + totalPrice.toLocaleString() + " VND";
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>Đặt Vé Tham Gia Tour Du Lịch</h1>
+    </header>
+
+    <div class="container">
+        <h2>Thông Tin Đặt Vé</h2>
+        <form action="thankyou.html" method="post" onsubmit="event.preventDefault(); window.location.href='thankyou.html';">
+            <!-- Tên đầy đủ -->
+            <div class="form-group">
+                <label for="fullname">Họ và tên</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Số điện thoại -->
+            <div class="form-group">
+                <label for="phone">Số điện thoại</label>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+
+            <!-- Ngày tham gia -->
+            <div class="form-group">
+                <label for="date">Ngày tham gia</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <!-- Chọn tour -->
+            <div class="form-group">
+                <label for="tour">Chọn Tour</label>
+                <select id="tour" name="tour" required>
+                    <option value="tour1">Tour Đà Nẵng 3 Ngày</option>
+                    <option value="tour2">Tour Hà Nội 5 Ngày</option>
+                    <option value="tour3">Tour Phú Quốc 4 Ngày</option>
+                    <option value="tour4">Tour Nha Trang 3 Ngày</option>
+                </select>
+            </div>
+
+            <!-- Số lượng vé người lớn -->
+            <div class="form-group">
+                <label for="adult_quantity">Số lượng vé người lớn (15,000,000 VND)</label>
+                <input type="number" id="adult_quantity" name="adult_quantity" min="0" value="0" oninput="calculateTotalPrice()" required>
+            </div>
+
+            <!-- Số lượng vé trẻ em -->
+            <div class="form-group">
+                <label for="child_quantity">Số lượng vé trẻ em (10,000,000 VND)</label>
+                <input type="number" id="child_quantity" name="child_quantity" min="0" value="0" oninput="calculateTotalPrice()" required>
+            </div>
+
+            <!-- Nhập voucher -->
+            <div class="form-group">
+                <label for="voucher">Nhập mã voucher</label>
+                <input type="text" id="voucher" name="voucher" placeholder="Nhập voucher (Ví dụ: 10c8)" oninput="calculateTotalPrice()">
+            </div>
+
+            <!-- Hiển thị tổng giá tiền -->
+            <div class="total-price" id="total_price">
+                Tổng giá tiền: 0 VND
+            </div>
+
+            <!-- Nút gửi -->
+            <div class="form-group">
+                <input type="submit" value="Đặt Vé Ngay">
+            </div>
+        </form>
+
+        <div class="voucher-info">
+            <p>Mã voucher hợp lệ: <strong>10c8</strong> (Giảm 20% tổng giá vé)</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 NGẠO NGHỄ COMPANY.</p>
+    </footer>
+
+</body>
+</html>

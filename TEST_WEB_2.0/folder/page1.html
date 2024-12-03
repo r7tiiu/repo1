@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu công ty</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        header h1 {
+            margin: 0;
+        }
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            color: #000000;
+        }
+        .team-member {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        .team-member img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin-right: 15px;
+        }
+        .team-member div {
+            flex: 1;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        header h2 {
+            font-size: 50px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header p {
+            font-size: 20px;
+            font-style: italic;
+            opacity: 0.8;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+
+        /* Navigation Bar */
+        nav {
+            margin-top: 30px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav ul li {
+            font-size: 18px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        /* Hover effect for navigation links */
+        nav ul li a:hover {
+            color: #FFD700;
+        }
+
+        /* Footer */
+        footer1 {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            margin-top: 50px;
+        }
+
+        /* Animation for fadeIn effect */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Button with hover effect */
+        .cta-button {
+            background-color: #FFD700;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 30px;
+            color: #333;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #FFB600;
+            transform: scale(1.1);
+        }
+
+        /* Parallax Effect */
+        .parallax {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 500px;
+            background-image: url('https://via.placeholder.com/1500x500');
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            z-index: -1;
+            opacity: 0.5;
+
+        }
+
+        /* Container chính của carousel */
+        .carousel-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden; /* Ẩn phần ảnh không nhìn thấy */
+            position: relative;
+        }
+
+        /* Phần hình ảnh carousel */
+        .carousel-images {
+            display: flex;
+            transition: transform 1s ease-in-out; /* Chuyển ảnh mượt mà */
+        }
+
+        .carousel-images img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Các dấu chấm điều hướng (thường dùng để chỉ vị trí ảnh) */
+        .carousel-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .carousel-dots span {
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .carousel-dots span.active {
+            background-color: #4CAF50;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<header>
+
+    <div class="parallax"></div>
+    <h2>Ngạo Nghễ company</h2>
+    <p>Nơi chấp cánh ước mơ du lịch của bạn</p>
+    <nav>
+        <ul class="box">
+            <li><a href="location.html">location</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="a">a</a></li>
+        </ul>
+    </nav>
+    <a href="booking.html" class="cta-button">ĐẶT NGAY</a> <!-- nút ấn chuyển trang chính  -->
+</header>
+
+<!-- Carousel Container -->
+<div class="carousel-container">
+    <div class="carousel-images">
+        <img src="https://freerangestock.com/sample/147117/melting-ice-cube-.jpg" alt="Image 1">
+        <img src="https://freerangestock.com/sample/147117/melting-ice-cube-.jpg" alt="Image 2">
+        <img src="https://freerangestock.com/sample/147117/melting-ice-cube-.jpg" alt="Image 3">
+    </div>
+    <div class="carousel-dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</div>
+
+<section>
+    <h2>Giới thiệu về chúng tôi</h2>
+    <p>Công ty ABC là một công ty chuyên cung cấp các dịch vụ công nghệ thông tin hàng đầu. Chúng tôi cam kết mang đến những sản phẩm và giải pháp chất lượng, sáng tạo, và hiệu quả cho khách hàng. Với đội ngũ chuyên gia giàu kinh nghiệm, chúng tôi tự hào là đối tác đáng tin cậy của các doanh nghiệp trên toàn thế giới.</p>
+</section>
+
+<section>
+    <h2>Sứ mệnh của chúng tôi</h2>
+    <p>Sứ mệnh của Công ty ABC là cung cấp những giải pháp công nghệ tiên tiến giúp doanh nghiệp nâng cao hiệu quả công việc và đạt được mục tiêu phát triển bền vững. Chúng tôi cam kết xây dựng mối quan hệ lâu dài và tạo ra giá trị thực sự cho khách hàng thông qua các sản phẩm và dịch vụ chất lượng cao.</p>
+</section>
+
+<section>
+    <h2>Giá trị cốt lõi</h2>
+    <ul>
+        <li><strong>Chất lượng</strong>: Luôn đảm bảo các sản phẩm và dịch vụ đạt tiêu chuẩn cao nhất.</li>
+        <li><strong>Sáng tạo</strong>: Không ngừng cải tiến và sáng tạo để đưa ra các giải pháp đột phá.</li>
+        <li><strong>Khách hàng là trọng tâm</strong>: Tập trung vào nhu cầu và sự hài lòng của khách hàng.</li>
+        <li><strong>Đội ngũ chuyên nghiệp</strong>: Đội ngũ nhân viên tận tâm và có chuyên môn cao.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Đội ngũ của chúng tôi</h2>
+    <div class="team-member">
+        <img src="https://via.placeholder.com/80" alt="Ảnh thành viên 1">
+        <div>
+            <h3>Nguyễn Văn A</h3>
+            <p>Giám đốc điều hành</p>
+        </div>
+    </div>
+    <div class="team-member">
+        <img src="https://via.placeholder.com/80" alt="Ảnh thành viên 2">
+        <div>
+            <h3>Trần Thị B</h3>
+            <p>Giám đốc công nghệ</p>
+        </div>
+    </div>
+    <div class="team-member">
+        <img src="https://via.placeholder.com/80" alt="Ảnh thành viên 3">
+        <div>
+            <h3>Phạm Minh C</h3>
+            <p>Trưởng phòng kinh doanh</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Thông tin liên hệ</h2>
+    <p>Địa chỉ: Số 123, Đường ABC, Thành phố XYZ, Việt Nam</p>
+    <p>Điện thoại: (+84) 123 456 789</p>
+    <p>Email: info@congtyabc.com</p>
+</section>
+
+<footer>
+    <p>&copy; 2024 Công ty ABC. Tất cả các quyền được bảo lưu. <br>
+    <a href="mailto:info@congtyabc.com">Liên hệ với chúng tôi</a></p>
+</footer>
+
+</body>
+
+<script>
+    // JavaScript to handle the automatic slide and dot indicator
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.carousel-images img');
+    const dots = document.querySelectorAll('.carousel-dots span');
+
+    function changeSlide() {
+        // Chuyển tới ảnh tiếp theo
+        currentIndex = (currentIndex + 1) % images.length;  // Duy trì vòng lặp
+        updateCarousel();
+    }
+
+    function updateCarousel() {
+        // Cập nhật vị trí của carousel và chỉ báo chấm
+        const offset = -currentIndex * 100;  // Tính offset cho carousel
+        document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+
+        // Cập nhật các chấm điều hướng
+        dots.forEach((dot, index) => {
+            dot.classList.remove('active');
+            if (index === currentIndex) {
+                dot.classList.add('active');
+            }
+        });
+    }
+
+    // Chạy slide tự động mỗi 3 giây
+    setInterval(changeSlide, 3000);
+
+    // Xử lý sự kiện khi người dùng click vào chấm điều hướng
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateCarousel();
+        });
+    });
+</script>
+</html>

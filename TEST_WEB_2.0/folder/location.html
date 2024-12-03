@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Địa Điểm Du Lịch Đẹp</title>
+    <style>
+        /* Thiết lập kiểu cho toàn bộ trang */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.1em;
+        }
+
+        /* Section giới thiệu địa điểm */
+        .destination {
+            background-color: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            transition: transform 0.3s ease-in-out; /* Thêm hiệu ứng cho ảnh */
+        }
+
+        .destination h2 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .destination p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .destination-img img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out; /* Thêm hiệu ứng cho ảnh */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer p {
+            font-size: 1em;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .destination {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .destination-img img {
+                width: 100%;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Khám Phá Những Địa Điểm Du Lịch Đẹp</h1>
+            <nav>
+                <ul>
+                    <li><a href="page1.html">Trang Chủ</a></li>
+                    <li><a href="services.html">Hỗ Trợ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="destination" id="destination1">
+        <div class="container">
+            <div class="destination-info">
+                <h2>DINH ĐỘC LẬP</h2>
+                <p>Dinh Độc Lập là một tòa dinh thự tại Thành phố Hồ Chí Minh, từng là nơi ở và làm việc của Tổng thống Việt Nam Cộng hòa trước Sự kiện 30 tháng 4 năm 1975. Hiện nay, dinh đã được Chính phủ Việt Nam xếp hạng là di tích quốc gia đặc biệt. Cơ quan quản lý di tích văn hoá Dinh Độc Lập có tên là Hội trường Thống Nhất thuộc Cục Hành chính Quản trị II – Văn phòng Chính phủ.</p>
+            </div>
+            <div class="destination-img">
+                <a href="https://dinhdoclap.gov.vn/#">
+                    <img src="https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2017/09/1-10.jpg" alt="Vịnh Hạ Long">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="destination" id="destination2">
+        <div class="container">
+            <div class="destination-info">
+                <h2>Phú Quốc</h2>
+                <p>Phú Quốc, thiên đường nghỉ dưỡng, nổi tiếng với bãi biển dài và cát trắng mịn. Nơi đây không chỉ có cảnh đẹp mà còn rất nổi bật với những dịch vụ nghỉ dưỡng cao cấp và các hoạt động thể thao biển thú vị.</p>
+            </div>
+            <div class="destination-img">
+                <img src="https://via.placeholder.com/600x400" alt="Phú Quốc">
+            </div>
+        </div>
+    </section>
+
+    <!-- Các địa điểm khác sẽ có mã tương tự -->
+    <section class="destination" id="destination3">
+        <div class="container">
+            <div class="destination-info">
+                <h2>Phú Quốc1</h2>
+                <p>Phú Quốc, thiên đường nghỉ dưỡng, nổi tiếng với bãi biển dài và cát trắng mịn. Nơi đây không chỉ có cảnh đẹp mà còn rất nổi bật với những dịch vụ nghỉ dưỡng cao cấp và các hoạt động thể thao biển thú vị.</p>
+            </div>
+            <div class="destination-img">
+                <img src="https://via.placeholder.com/600x400" alt="Phú Quốc">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 NGẠO NGHỄ COMPANY</p>
+        </div>
+    </footer>
+
+    <script>
+        // Hàm kiểm tra ảnh có xuất hiện trong vùng nhìn thấy hay không
+        function checkImageInView(imageElement, threshold = 0.65) {
+            const rect = imageElement.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            // Kiểm tra ảnh có trong phạm vi view (phạm vi 50%)
+            return rect.top <= windowHeight * threshold && rect.bottom >= 0;
+        }
+
+        // Hàm phóng to ảnh khi cuộn đến
+        function handleScroll() {
+            const images = document.querySelectorAll('.destination-img img');
+
+            images.forEach(img => {
+                if (checkImageInView(img)) {
+                    img.style.transform = "scale(1.0)"; // Phóng to 20%
+                } else {
+                    img.style.transform = "scale(0.8)"; // Trở lại kích thước ban đầu
+                }
+            });
+        }
+
+        // Lắng nghe sự kiện cuộn trang
+        window.addEventListener('scroll', handleScroll);
+
+        // Gọi hàm để kiểm tra ngay khi tải trang
+        handleScroll();
+    </script>
+</body>
+</html>
